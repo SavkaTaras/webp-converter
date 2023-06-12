@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node start.js"
+  },
+  "devDependencies": {
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^8.0.0"
+  },
+  "type": "module"
+}
