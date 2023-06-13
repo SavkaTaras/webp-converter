@@ -1,7 +1,7 @@
 import imagemin from 'imagemin';
 import imageminWebp from 'imagemin-webp';
-const filesLocation = 'images/*.{jpg,png}';
-const destinationFolder = 'done/';
+const filesLocation = 'images/*.{jpg,jpeg,png}';
+const destinationFolder = 'processed/';
 
 imagemin([filesLocation], {
 	destination: destinationFolder,
