@@ -7,7 +7,7 @@ imagemin([filesLocation], {
 	destination: destinationFolder,
 	plugins: [
 		imageminWebp({
-			quality: 50,
+			quality: 60,
 			// resize: {
 			//   width: 1000,
 			//   height: 0
