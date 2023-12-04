@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node start.js"
+    "start": "node start.js",
+    "gallery": "node gallery.js"
   },
   "devDependencies": {
     "imagemin": "^8.0.1",
