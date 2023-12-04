@@ -7,7 +7,7 @@ const imageSizes = [320, 768, 1920];
 
 const fileFolder = 'images';
 const tempFolder = 'tmp';
-const destinationFolder = 'gallery/';
+const destinationFolder = 'gallery';
 
 const generateFiles = () => {
 	fs.readdir(fileFolder, (err, files) => {
@@ -18,7 +18,7 @@ const generateFiles = () => {
 				const fileName = file.split('.');
 				const extension = fileName[fileName.length - 1];
 				fileName.pop();
-				const newFileName = `${fileName.join('.')}-${el}.${extension}`;
+				const newFileName = `${fileName.join('.')}-${el === 320 ? 'thumb' : el}.${extension}`;
 
 				const fileFolderFile = `${fileFolder}/${file}`;
 				const tempFolderNewFileName = `${tempFolder}/${newFileName}`;
