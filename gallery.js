@@ -15,7 +15,7 @@ const getSize = (size) => {
 		case imageSizes[0]:
 			sizeString = 'thumb';
 			break;
-		
+
 		case imageSizes[1]:
 			sizeString = 'sm';
 			break;
@@ -27,7 +27,7 @@ const getSize = (size) => {
 		case imageSizes[3]:
 			sizeString = 'lg';
 			break;
-		
+
 		default:
 			break;
 	}
@@ -81,7 +81,7 @@ const checkTemp = () => {
 	} else {
 		fs.readdir(`${tempFolder}/`, (err, files) => {
 			if (err) throw err;
-	
+
 			for (const file of files) {
 				fs.unlink(path.join(`${tempFolder}/`, file), (err) => {
 					if (err) throw err;
@@ -99,7 +99,7 @@ const cleanProcessedFolder = () => {
 	} else {
 		fs.readdir(`${destinationFolder}`, (err, files) => {
 			if (err) throw err;
-	
+
 			for (const file of files) {
 				fs.unlink(path.join(`${destinationFolder}`, file), (err) => {
 					if (err) throw err;

@@ -56,7 +56,7 @@ const checkTemp = () => {
 	} else {
 		fs.readdir(`${tempFolder}/`, (err, files) => {
 			if (err) throw err;
-	
+
 			for (const file of files) {
 				fs.unlink(path.join(`${tempFolder}/`, file), (err) => {
 					if (err) throw err;
@@ -74,7 +74,7 @@ const cleanProcessedFolder = () => {
 	} else {
 		fs.readdir(`${destinationFolder}`, (err, files) => {
 			if (err) throw err;
-	
+
 			for (const file of files) {
 				fs.unlink(path.join(`${destinationFolder}`, file), (err) => {
 					if (err) throw err;
