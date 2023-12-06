@@ -3,11 +3,37 @@ import imageminWebp from 'imagemin-webp';
 import fs from "fs";
 import path from "path";
 
-const imageSizes = [320, 768, 1920];
+const imageSizes = [320, 768, 1024, 1920];
 
 const fileFolder = 'images';
 const tempFolder = 'tmp';
 const destinationFolder = 'gallery';
+
+const getSize = (size) => {
+	let sizeString = '';
+	switch(size) {
+		case imageSizes[0]:
+			sizeString = 'thumb';
+			break;
+		
+		case imageSizes[1]:
+			sizeString = 'sm';
+			break;
+
+		case imageSizes[2]:
+			sizeString = 'md';
+			break;
+
+		case imageSizes[3]:
+			sizeString = 'lg';
+			break;
+		
+		default:
+			break;
+	}
+
+	return sizeString;
+};
 
 const generateFiles = () => {
 	fs.readdir(fileFolder, (err, files) => {
@@ -18,7 +44,7 @@ const generateFiles = () => {
 				const fileName = file.split('.');
 				const extension = fileName[fileName.length - 1];
 				fileName.pop();
-				const newFileName = `${fileName.join('.')}-${el === 320 ? 'thumb' : el}.${extension}`;
+				const newFileName = `${fileName.join('.')}-${getSize(el)}.${extension}`;
 
 				const fileFolderFile = `${fileFolder}/${file}`;
 				const tempFolderNewFileName = `${tempFolder}/${newFileName}`;
