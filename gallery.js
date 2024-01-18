@@ -42,8 +42,7 @@ const generateFiles = () => {
 		for (const file of files) {
 			imageSizes.forEach((el) => {
 				const fileName = file.split('.');
-				const extension = fileName[fileName.length - 1];
-				fileName.pop();
+				const extension = fileName.pop();
 				const newFileName = `${fileName.join('.')}-${getSize(el)}.${extension}`;
 
 				const fileFolderFile = `${fileFolder}/${file}`;
