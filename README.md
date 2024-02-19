@@ -2,9 +2,8 @@
 
 ## Image converter to webp format
 
-### Tested w/Node 18, npm 8.x.x
+### Tested w/Node 18, npm 8.x.x, and up
 
----
 From root folder:
 
 ```bash
@@ -21,6 +20,8 @@ Run:
 npm run start
 ```
 
+---
+
 Processed images will go into `processed` folder. Converts `jpg`, `jpeg`, or `png` into `webp` format.
 
 Pass sizes like this:
@@ -28,6 +29,8 @@ Pass sizes like this:
 ```bash
 npm run start 500 700 1000
 ```
+
+---
 
 Settings:
 
