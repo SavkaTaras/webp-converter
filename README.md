@@ -12,13 +12,17 @@ npm install
 
 Place the images you want to convert into `images` folder.
 
-Run: 
+Run:
 ```
 npm run start
 ```
 
 Processed images will go into `processed` folder. Converts `jpg`, `jpeg`, or `png` into `webp` format.
 
+Pass sizes like this:
+```bash
+npm run start 500 700 1000
+```
 
 Settings:
 
