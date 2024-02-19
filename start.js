@@ -3,7 +3,9 @@ import imageminWebp from 'imagemin-webp';
 import fs from "fs";
 import path from "path";
 
-const imageSizes = [768, 1024, 1280, 1920];
+const args = process.argv;
+const argsSizes = args.splice(2);
+const imageSizes = argsSizes.length > 0 ? argsSizes : [768, 1024, 1280, 1920];
 
 const fileFolder = 'images';
 // const filesLocation = `${fileFolder}/*.{jpg,jpeg,png,webp}`;
