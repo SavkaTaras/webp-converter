@@ -8,9 +8,9 @@ const argsSizes = args.splice(2);
 
 const imageSizes = argsSizes.length > 0 ? argsSizes : [320, 768, 1024, 1920];
 
-const fileFolder = 'images';
+const fileFolder = 'src';
 const tempFolder = 'tmp';
-const destinationFolder = 'gallery';
+const destinationFolder = 'dist/gallery';
 
 const getSize = (size) => {
 	let sizeString = '';
@@ -78,7 +78,7 @@ const generateFiles = () => {
 
 const checkTemp = () => {
 	if (!fs.existsSync(tempFolder)) {
-		fs.mkdirSync(tempFolder);
+		fs.mkdirSync(tempFolder, { recursive: true });
 		generateFiles();
 	} else {
 		fs.readdir(`${tempFolder}/`, (err, files) => {
@@ -96,7 +96,7 @@ const checkTemp = () => {
 
 const cleanProcessedFolder = () => {
 	if (!fs.existsSync(destinationFolder)) {
-		fs.mkdirSync(destinationFolder);
+		fs.mkdirSync(destinationFolder, { recursive: true });
 		checkTemp();
 	} else {
 		fs.readdir(`${destinationFolder}`, (err, files) => {

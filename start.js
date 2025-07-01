@@ -7,10 +7,10 @@ const args = process.argv;
 const argsSizes = args.splice(2);
 const imageSizes = argsSizes.length > 0 ? argsSizes : [768, 1024, 1280, 1920];
 
-const fileFolder = 'images';
+const fileFolder = 'src';
 // const filesLocation = `${fileFolder}/*.{jpg,jpeg,png,webp}`;
 const tempFolder = 'tmp';
-const destinationFolder = 'processed/';
+const destinationFolder = 'dist/images/';
 
 const generateFiles = () => {
 	fs.readdir(fileFolder, (err, files) => {
@@ -53,7 +53,7 @@ const generateFiles = () => {
 
 const checkTemp = () => {
 	if (!fs.existsSync(tempFolder)) {
-		fs.mkdirSync(tempFolder);
+		fs.mkdirSync(tempFolder, { recursive: true });
 		generateFiles();
 	} else {
 		fs.readdir(`${tempFolder}/`, (err, files) => {
@@ -71,7 +71,7 @@ const checkTemp = () => {
 
 const cleanProcessedFolder = () => {
 	if (!fs.existsSync(destinationFolder)) {
-		fs.mkdirSync(destinationFolder);
+		fs.mkdirSync(destinationFolder, { recursive: true });
 		checkTemp();
 	} else {
 		fs.readdir(`${destinationFolder}`, (err, files) => {
